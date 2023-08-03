@@ -1,0 +1,107 @@
+#header{
+    padding: 28px 0;
+}
+.header__container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header__list{
+    display: flex;
+    align-items: center;
+    gap: 59px;
+}
+.header__link{
+    color: #000;
+    font-size: 18px;
+    font-weight: 400;
+    position: relative;
+    
+}
+.header__bottom::after{
+    content:"";
+    display: inline-block;
+    background-image: url(/images/header__bottom.svg);
+    background-repeat: no-repeat;
+    width: 12px;
+    height: 7px;
+    position: absolute;
+    top: 8px;
+    right: -20px;
+    
+}
+.header__number{
+    color:  #0D1C41;
+    font-size: 24px;
+    font-weight: 400;
+}
+.header__profile{
+    color: #0D1C41;
+    font-size: 18px;
+    font-weight: 400;
+    position: relative;
+    &::after{
+        content: "";
+        display: inline-block;
+        background-image: url(/images/header__profile.svg);
+        width: 28px;
+        height: 28px;
+        position: absolute;
+        left: 140px;
+        top: -4px;
+    }
+}
+.header__burger{
+    // width: 10px;
+    // height: 10px;
+    display: none;
+}
+@media screen and (max-width:1027px) {
+    .header__list{
+        gap: 40px;
+    }
+    .header__link{
+        font-size: 14px;
+    }
+    .header__profile{
+        font-size: 16px;
+        &::after{
+            left: 130px;
+        }
+    }
+}
+@media screen and (max-width:768px) {
+    .header__container{
+        flex-direction: column;
+    }
+    .header__list{
+        flex-direction: column;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    .header__link{
+        font-size: 18px;
+    }
+    .header__profile{
+        font-size: 18px;
+        &::after{
+            left: 140px;
+        }
+    }
+}
+@media screen and (max-width:425px) {
+    .header__container{
+        flex-direction: row;
+        justify-content: space-around;
+
+    }
+    .header__list{
+        display: none;
+    }
+    .header__profile{
+        display: none;
+    }
+    .header__burger{
+        display: inline-block;
+    }
+}
